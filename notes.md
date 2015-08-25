@@ -26,6 +26,8 @@ If using Java,
 
 	if(result > Integer.MAX_VALUE || result < Integer.MIN_VALUE), then overflow
 
+#### Malloc Char Array
 
+When malloc char array, make sure malloc the size of strlen(str) + 1 to allow str[len] = '\0' without Runtime Error
 
 
