@@ -1,0 +1,21 @@
+// recursive
+
+bool isSameTree(TreeNode* p, TreeNode* q) {
+    return (!p && !q) || (p && q) && p->val==q->val && isSameTree(p->left,q->left) && isSameTree(p->right,q->right);
+}
+// iterative with std::stack
+
+bool isSameTree(TreeNode* p, TreeNode* q) {
+    std::stack<std::pair<TreeNode*,TreeNode*>> stn;
+    stn.push(std::pair<TreeNode*,TreeNode*>(p,q));
+    while(!stn.empty()) {
+        p=stn.top().first, q=stn.top().second;
+        if((!p^!q) || (p && q && p->val!=q->val)) break;
+        stn.pop();
+        if(p && q) {
+            stn.push(std::pair<TreeNode*,TreeNode*>(p->left,q->left));
+            stn.push(std::pair<TreeNode*,TreeNode*>(p->right,q->right));
+        }
+    }
+    return stn.empty();
+}
