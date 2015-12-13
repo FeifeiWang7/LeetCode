@@ -1,7 +1,8 @@
 ### Vector
 
-include <vector>
-
+```c++
+#include <vector>
+```
 #### initialize
 
 * empty vector
