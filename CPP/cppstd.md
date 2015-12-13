@@ -1,8 +1,8 @@
-#### Vector
+### Vector
 
-#include <vector>
+include <vector>
 
-##### initialize
+#### initialize
 
 * empty vector
 
