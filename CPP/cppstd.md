@@ -56,4 +56,14 @@ Returns an iterator pointing to the first element in the vector.
 	cout << '\n';
 ```
 
+##### size, capacity, max_size
+```c++
+vector<int> v;
+for (int i=0; i<100; i++) myvector.push_back(i);
+
+cout << "size: " << (int) myvector.size() << '\n';
+cout << "capacity: " << (int) myvector.capacity() << '\n';
+cout << "max_size: " << (int) myvector.max_size() << '\n';
+```
+
 
