@@ -1,3 +1,17 @@
+int reverse(int x) {
+    int out=0;
+    //int sign = x >= 0 ? 1:-1;
+    //x=abs(x);
+    while(x != 0)
+    {
+        if(out > INT_MAX/10 || out < INT_MIN/10) return 0;
+        out = out * 10 + x % 10;
+        x /= 10;
+    }
+    //return out*sign;
+    return out;
+}
+///
 int reverse(int x)
 {
         char* digit = (char *)malloc(sizeof(char)*12);

@@ -1,0 +1,10 @@
+Python :
+
+   return n>0 and (n&(n-1)) is 0 
+Java :
+
+ return n>0  && (Integer.parseInt(Integer.toBinaryString(n),2)& Integer.parseInt(Integer.toBinaryString(n-1),2))==0;    
+C++ :
+
+return n<=0?false:(n&(n-1))==0;
+

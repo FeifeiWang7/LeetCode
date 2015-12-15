@@ -1,0 +1,97 @@
+Just divide by 2, 3 and 5 as often as possible and then check whether we arrived at 1. Also try divisor 4 if that makes the code simpler / less repetitive.
+
+C++ / C
+
+for (int i=2; i<6 && num; i++)
+    while (num % i == 0)
+        num /= i;
+return num == 1;
+Ruby
+
+(2..5).each { |i| num /= i while num % i == 0 } if num > 0
+num == 1
+Or:
+
+require 'prime'
+num > 0 && num.prime_division.all? { |p, _| p < 6 }
+Python
+
+for p in 2, 3, 5:
+    while num % p == 0 < num:
+        num /= p
+return num == 1
+Java / C#
+
+for (int i=2; i<6 && num>0; i++)
+    while (num % i == 0)
+        num /= i;
+return num == 1;
+
+/////
+JAVA
+
+public class Solution {
+    public boolean isUgly(int num) {
+          if (num==0)
+        return false;
+        else {
+            while(num!=1)
+            {
+                if(num%2==0)
+                num/=2;
+                else if(num%3==0)
+                num/=3;
+                else if(num%5==0)
+                num/=5;
+                else break;
+            }
+
+            if(num==1)
+            return true;
+            else return false;
+        }
+    }
+}
+C++
+
+class Solution {
+public:
+    bool isUgly(int num) {
+        if (num==0)
+        return false;
+        else {
+            while(num!=1)
+            {
+                if(num%2==0)
+                num/=2;
+                else if(num%3==0)
+                num/=3;
+                else if(num%5==0)
+                num/=5;
+                else break;
+            }
+
+            if(num==1)
+            return true;
+            else return false;
+        }
+    }
+};
+Python
+
+class Solution(object):
+    def isUgly(self, num):
+         if num==0:
+             return False
+         else :
+             while(num!=1 and (num%2==0 or num%3==0 or num%5==0)):
+                 if num%2==0:
+                     num/=2
+                 elif num%3==0:
+                     num/=3
+                 else:
+                     num/=5
+         if num==1:
+             return True
+         else:
+             return False

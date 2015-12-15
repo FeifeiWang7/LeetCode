@@ -12,3 +12,22 @@ bool isPalindrome(int x) {
     }
     return true;
 }
+
+bool isPalindrome(int x)
+{
+	if(x<0) return false;
+	int p = 1;
+	while(x/p >= 10)
+	{
+		p = p * 10;
+	}
+	while(p>=1)
+	{
+		int left = x%10;
+		int right = x/p;
+		if(left != right) return false;
+		x = (x - p*right)/10;
+		p = p/100;
+	}
+	return true;
+}

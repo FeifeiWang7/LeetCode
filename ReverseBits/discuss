@@ -1,0 +1,20 @@
+The problem comes with this follow up:
+
+If this function is called many times, how would you optimize it?
+I thought at it, but I cannot answer this question. Any hints?
+
+FWIW, here's my solution (Python):
+
+class Solution(object):
+    def reverseBits(self, n):
+        m = 0
+        for i in xrange(32):
+            m = (m << 1) | (n & 1)
+            n >>= 1
+        return m
+
+I guess we can use a divide and conquer way.
+
+A lookup table can be used to achieve O(1) time complexity. Here is a link you may find helpful. All credits for the top answer.
+
+http://stackoverflow.com/questions/746171/best-algorithm-for-bit-reversal-from-msb-lsb-to-lsb-msb-in-c
